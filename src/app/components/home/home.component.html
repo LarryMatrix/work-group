@@ -1,0 +1,31 @@
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link"
+       (click)="clickURI('indicator')"
+       [routerLink]="['indicators']"
+       [routerLinkActive]="['active']"
+       aria-current="page">
+      Indicators
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"
+       (click)="clickURI('data-element')"
+       [routerLink]="['data-elements']"
+       [routerLinkActive]="['active']"
+       aria-current="page">Data Elements</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"
+       (click)="clickURI('org-unit')"
+       [routerLink]="['org-units']"
+       [routerLinkActive]="['active']"
+       aria-current="page">Organisation Units</a>
+  </li>
+</ul>
+
+<div class="mt-4">
+  <app-indicators *ngIf="tabId==='indicator'"></app-indicators>
+  <app-data-elements *ngIf="tabId==='data-element'"></app-data-elements>
+  <app-org-units *ngIf="tabId==='org-unit'"></app-org-units>
+</div>

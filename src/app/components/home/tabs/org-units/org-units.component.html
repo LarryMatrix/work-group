@@ -1,0 +1,24 @@
+<table
+  *ngIf="organisationUnits.length != 0"
+  class="table table-striped table-bordered border-primary">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">ID</th>
+    <th scope="col">Display Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ind of organisationUnits; let count = index">
+    <th scope="row">{{count + 1}}</th>
+    <td>{{ind.id}}</td>
+    <td>{{ind.displayName}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="text-center" *ngIf="organisationUnits.length == 0">
+  <p class="text-dark h2">
+    Loading...
+  </p>
+</div>
